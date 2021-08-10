@@ -1,10 +1,10 @@
 //============ Exercise #1 ============//
 /*
-Write a fucntion that takes in an array and removes every even index with a splice,
+Write a function that takes in an array and removes every even index with a splice,
 and replaces it with the string "even index" 
 Expected output
-Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
-Output arr == ["even index","Baseball","even index","Goku","even index","Rodger"]
+Given arr: ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
+Output arr: ["even index","Baseball","even index","Goku","even index","Rodger"]
 */
 
 const testArr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
@@ -35,20 +35,3 @@ const person = {
 }
 
 
-//============ Exercise #3 ============//
-/*
-Write an object prototype for a Person that has a name and age, has a
-printInfo method, and also has a method that 
-increments the persons age by 1 each time the method is called.
-Create two people using the 'new' keyword, and print 
-both of their infos and increment one persons
-age by 3 years. Use an arrow function for both methods
-*/
-
-// Create our Person Prototype
-
-
-// Use an arrow to create the printInfo method
-
-// Create another arrow function for the addAge method that takes a single parameter
-// Adding to the age 
