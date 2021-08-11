@@ -221,34 +221,169 @@ console.clear()
 // child.age = 27
 // console.log(child)
 
-// Functional Instantiation with Object.create
-const animalMethods = {
-    eat: function(amount){
+// // Functional Instantiation with Object.create
+// const animalMethods = {
+//     eat: function(amount){
+//         console.log(`${this.name} has eaten ${amount}`);
+//         this.energy += amount;
+//     },
+
+//     sleep: function(length){
+//         console.log(`${this.name} is sleeping for ${length}`)
+//         this.energy += length
+//     },
+
+//     play: function(length){
+//         console.log(`${this.name} is playing for ${length}`)
+//         this.energy -= length
+//     }
+// }
+
+// function Animal(name, energy){
+//     let animal = Object.create(animalMethods)
+//     animal.name = name
+//     animal.energy = energy
+
+//     return animal
+// }
+
+// const buddy = Animal('Buddy', 10);
+// const snoopy = Animal('Snoopy', 15);
+
+// console.log(buddy);
+// console.log(snoopy);
+
+
+// // JavaScript Prototype
+// function myFunc(){};
+// console.log(myFunc.prototype);
+
+
+// // PROTOTYPAL INSTANTIATION
+
+// function Animal(name, energy){
+//     let animal = Object.create(Animal.prototype)
+//     animal.name = name
+//     animal.energy = energy
+
+//     return animal
+// }
+
+// Animal.prototype.eat = function(amount){
+//     console.log(`${this.name} has eaten ${amount}`);
+//     this.energy += amount;
+// }
+
+// Animal.prototype.sleep = function(length){
+//     console.log(`${this.name} is sleeping for ${length}`)
+//     this.energy += length
+// }
+
+// Animal.prototype.play = function(length){
+//     console.log(`${this.name} is playing for ${length}`)
+//     this.energy -= length
+// }
+
+// const buddy = Animal('Buddy', 10);
+// const snoopy = Animal('Snoopy', 15);
+
+// console.log(buddy);
+// console.log(snoopy);
+
+
+// Protypal Instantiation with NEW keyword
+// Pseudoclassical Instantiation
+
+// function Animal(name, energy){
+//     // let animal = Object.create(Animal.prototype)
+//     this.name = name
+//     this.energy = energy
+
+//     // return animal
+// }
+
+// Animal.prototype.eat = function(amount){
+//     console.log(`${this.name} has eaten ${amount}`);
+//     this.energy += amount;
+// }
+
+// Animal.prototype.sleep = function(length){
+//     console.log(`${this.name} is sleeping for ${length}`)
+//     this.energy += length
+// }
+
+// Animal.prototype.play = function(length){
+//     console.log(`${this.name} is playing for ${length}`)
+//     this.energy -= length
+// }
+
+// const buddy = new Animal('Buddy', 10);
+// const snoopy = new Animal('Snoopy', 15);
+
+// console.log(buddy);
+// console.log(snoopy);
+
+
+// Building Objects with the CLASS keyword
+
+class Animal {
+    constructor(name, energy){
+        this.name = name
+        this.energy = energy
+    }
+
+    eat(amount){
         console.log(`${this.name} has eaten ${amount}`);
         this.energy += amount;
-    },
+    }
 
-    sleep: function(length){
-        console.log(`${this.name} is sleeping for ${length}`)
-        this.energy += length
-    },
+    sleep(length){
+        console.log(`${this.name} is sleeping for ${length}`);
+        this.energy += length;
+    }
 
-    play: function(length){
-        console.log(`${this.name} is playing for ${length}`)
-        this.energy -= length
+    play(length){
+        console.log(`${this.name} is playing for ${length}`);
+        this.energy -= length;
     }
 }
 
-function Animal(name, energy){
-    let animal = Object.create(animalMethods)
-    animal.name = name
-    animal.energy = energy
-
-    return animal
-}
-
-const buddy = Animal('Buddy', 10);
-const snoopy = Animal('Snoopy', 15);
+const buddy = new Animal('Buddy', 10);
+const snoopy = new Animal('Snoopy', 15);
 
 console.log(buddy);
 console.log(snoopy);
+
+
+// JavaScript Object Inheritance
+
+class Human{
+    // Constructor method
+    constructor(name, age, gender){
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    eat(){
+        console.log(`${this.name} is eating`)
+    }
+}
+
+const wilma = new Human('Wilma', 25, 'Female');
+const fred = new Human('Fred', 25, 'Male');
+
+// Inheritance of classes -- EXTENDS keyword
+class Baby extends Human {
+    constructor(name, age, gender, squishyHead){
+        super(name, age, gender)
+        this.squishyHead = squishyHead
+    }
+    crawl(){
+        console.log(`${this.name} is crawling`)
+    }
+}
+
+
+const bambam = new Baby('Bam-Bam', 1, 'Male', true);
+console.log(bambam);
